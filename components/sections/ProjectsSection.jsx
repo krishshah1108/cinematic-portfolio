@@ -155,6 +155,46 @@ export default function ProjectsSection() {
 
   return (
     <div className={styles.pin} style={{ height: `${PROJECTS.length * 100}vh` }}>
+      <div className={styles.phoneList}>
+        {PROJECTS.map((proj) => (
+          <article key={proj.id} className={styles.phoneCard}>
+            <Image
+              src={proj.image}
+              alt=""
+              fill
+              quality={80}
+              sizes="100vw"
+              className={styles.phoneImg}
+            />
+            <div className={styles.phoneShade} aria-hidden />
+            <div className={styles.phoneBody}>
+              <span className={styles.typeTag}>{proj.type}</span>
+              <h2 className={styles.title}>{proj.title}</h2>
+              <p className={styles.subtitle}>{proj.subtitle}</p>
+              <p className={styles.desc}>{proj.desc}</p>
+              <div className={styles.stack}>
+                {proj.tech.map(t => (
+                  <span key={t} className={styles.tag}>{t}</span>
+                ))}
+              </div>
+              {proj.link ? (
+                <a
+                  href={proj.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.liveBtn}
+                >
+                  <span>{proj.link.includes('github.com') ? 'View on GitHub' : 'View project'}</span>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
+                    <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              ) : null}
+            </div>
+          </article>
+        ))}
+      </div>
+
       <section ref={sectionRef} className={styles.section}>
 
         <div className={styles.chrome}>

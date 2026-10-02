@@ -279,16 +279,77 @@
   will-change: transform;
 }
 
-/* ── Mobile: one full-screen project per swipe ─ */
+/* Phone-only vertical list. Hidden on desktop so the sideways track stays. */
+.phoneList {
+  display: none;
+}
+
+/* ── Mobile: plain vertical scroll, no sideways track ─ */
 @media (max-width: 767px) {
   .pin {
     height: auto !important;
+    overflow-x: hidden;
   }
 
   .section {
+    display: none;
+  }
+
+  .phoneList {
+    display: block;
+  }
+
+  .phoneCard {
     position: relative;
-    height: auto;
+    display: flex;
+    align-items: flex-end;
+    min-height: 100svh;
+    overflow: hidden;
+    background: #0d0d0d;
+  }
+
+  .phoneImg {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .phoneShade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(4, 4, 4, 0.94) 0%,
+      rgba(4, 4, 4, 0.72) 42%,
+      rgba(4, 4, 4, 0.2) 100%
+    );
+  }
+
+  .phoneBody {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    width: 100%;
+    padding: 5rem 1.15rem 1.75rem;
+  }
+
+  .phoneBody .title {
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+  }
+
+  .phoneBody .desc {
+    display: block;
     overflow: visible;
+    -webkit-line-clamp: unset;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .phoneBody .liveBtn {
+    pointer-events: auto;
+    margin-top: 0.35rem;
   }
 
   .chrome {
