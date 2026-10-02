@@ -1,0 +1,162 @@
+{
+  "name": {
+    "first": "Krish",
+    "last": "Shah",
+    "full": "Krish Shah"
+  },
+  "email": "krishhshah1108@gmail.com",
+  "phone": "+91 8200417557",
+  "tagline": "Building Scalable Digital Products at the Intersection of Software, Data & AI.",
+  "description": "Full-Stack Developer and Data Science postgraduate building scalable, data-driven products across software, analytics, and AI.",
+  "roles": {
+    "short": "AI-Focused Software Developer",
+    "detailed": "Full-Stack Engineer · Gen AI · System Design"
+  },
+  "location": {
+    "based": "Anywhere",
+    "availability": "Worldwide"
+  },
+  "available": true,
+  "bio": "I'm a Full-Stack Developer and Data Science postgraduate focused on building scalable, data-driven digital products. My experience spans web application development, backend systems, data analytics, and AI/GenAI solutions, with a strong interest in turning complex problems into practical products. I enjoy working across the stack, from designing reliable systems and APIs to extracting insights from data and building intelligent workflows.",
+  "stats": [
+    { "value": "2",   "label": "Years Experience" },
+    { "value": "30+", "label": "Projects Completed" },
+    { "value": "12+", "label": "Technologies Used" }
+  ],
+  "skills": [
+    "Full-Stack Developer",
+    "Data Science",
+    "GenAI",
+    "Machine Learning",
+    "Data Analytics",
+    "Python",
+    "SQL",
+    "Backend Systems",
+    "API Design",
+    "Scalable Products",
+    "Intelligent Workflows",
+    "Web Applications"
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "role": "Full Stack Developer",
+      "company": "FastWhistle",
+      "companyShort": "FASTWHISTLE",
+      "type": "Internship",
+      "location": "Surat, India",
+      "period": "Jan 2025",
+      "periodEnd": "Jun 2025",
+      "bullets": [
+        "Built full-stack features for a medicine-delivery and fleet product, covering orders, rider tasks, and delivery status.",
+        "Developed API-backed screens for attendance, collections, and field-team tracking used by pharma distributors.",
+        "Connected operational dashboards to live delivery data so the team could follow a shipment without manual updates.",
+        "Fixed interface issues and shipped small releases with the product team across the six-month internship."
+      ],
+      "desc": "Six-month full-stack internship on FastWhistle's medicine delivery and fleet software. Orders, rider tasks, attendance, collections, and delivery tracking.",
+      "tech": ["JavaScript", "Node.js", "MongoDB", "REST APIs"]
+    },
+    {
+      "id": 2,
+      "role": "Full Stack Developer",
+      "company": "Freelance",
+      "companyShort": "FREELANCE",
+      "type": "Independent",
+      "location": "Remote",
+      "period": "2025",
+      "periodEnd": "Present",
+      "bullets": [
+        "Designed and delivered Amaba Jewellery, a brand website led by product photography, with collections that stay easy to browse on desktop and mobile.",
+        "Built eduCare, an education platform covering courses, learner progress, and educator follow-up from enrolment through each lesson.",
+        "Shipped a WhatsApp CRM for campaigns, message templates, and conversation follow-up, so client communication stays in one place.",
+        "Built Document Intelligence, a financial-document workflow that reads PDFs and spreadsheets, stores table data for lookup, and returns answers with citations.",
+        "Ran each engagement from the first brief through layout, build, and handover, with a working product the client could use.",
+        "Kept the interface consistent from wide screens to phones, and structured pages so content can change without breaking the layout.",
+        "Paired the interface with the API or data layer when the product needed accounts, messages, or document search."
+      ],
+      "desc": "Independent full-stack work across brand websites, an education platform, a messaging CRM, and a financial-document workflow. Each engagement runs from brief through build and handover.",
+      "tech": ["React.js", "Node.js", "Python", "FastAPI", "JavaScript"]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Knowledge Transfer",
+      "subtitle": "Institutional RAG System",
+      "type": "Gen AI",
+      "link": "https://github.com/krishshah1108/knowledge-transfer-rag",
+      "image": "/assets/project-knowledge.jpg",
+      "tech": ["Python", "FastAPI", "FAISS", "DuckDB", "Gemini"],
+      "desc": "Turns historical emails into a searchable knowledge base. The pipeline cleans and chunks messages, embeds them, stores vectors in FAISS and metadata in DuckDB, and answers with a Gemini RAG flow that cites the source messages."
+    },
+    {
+      "id": 2,
+      "title": "MediReminder India",
+      "subtitle": "AI Medicine Adherence Platform",
+      "type": "Full Stack",
+      "link": "https://github.com/krishshah1108/mediReminder_India",
+      "image": "/assets/project-medireminder.jpg",
+      "tech": ["Python", "FastAPI", "Firebase", "LLM APIs"],
+      "desc": "Backend for a multilingual medicine-adherence platform. It analyzes prescriptions, flags food-drug interactions, helps with missed doses, and escalates to caregivers, with 90% successful end-to-end processing across 30 workflows."
+    },
+    {
+      "id": 3,
+      "title": "Sales Performance",
+      "subtitle": "Atliq Hardware Finance Analytics",
+      "type": "Analytics",
+      "link": "https://github.com/krishshah1108/Sales-Performance-Dashboard",
+      "image": "/assets/project-sales.jpg",
+      "tech": ["Excel", "PivotTables", "Finance Analytics"],
+      "desc": "Excel reports for Atliq Hardware covering yearly sales, market performance against targets, customer contribution, and profit-and-loss by year, market, and month."
+    },
+    {
+      "id": 4,
+      "title": "Customer Churn",
+      "subtitle": "Telecom Retention Model",
+      "type": "Analytics",
+      "link": "https://github.com/krishshah1108/Customer-Churn-prediction",
+      "image": "/assets/project-churn.jpg",
+      "tech": ["Python", "Pandas", "Scikit-learn", "Matplotlib"],
+      "desc": "Telecom churn analysis across contract, billing, and service usage. Classifiers were compared, and a voting model of gradient boosting, logistic regression, and AdaBoost reached about 84.7% accuracy."
+    }
+  ],
+  "publications": [
+    {
+      "id": 1,
+      "title": "Amaba Jewellery",
+      "platform": "Client Project",
+      "year": "Delivered",
+      "link": "",
+      "desc": "A client website for a jewellery brand. Product photography leads each page, collections stay easy to browse, and the layout holds together from desktop to mobile."
+    },
+    {
+      "id": 2,
+      "title": "eduCare",
+      "platform": "Education Platform",
+      "year": "Delivered",
+      "link": "",
+      "desc": "An education platform for courses, learner progress, and educator follow-up. The structure takes a student from enrolment through lessons without losing their place."
+    },
+    {
+      "id": 3,
+      "title": "Document Intelligence",
+      "platform": "Financial Workflow",
+      "year": "Delivered",
+      "link": "",
+      "desc": "A hybrid RAG and SQL backend for financial PDFs and spreadsheets. Documents are ingested in batch, table cells land in DuckDB, text is embedded in FAISS, and answers come back with citations."
+    },
+    {
+      "id": 4,
+      "title": "WhatsApp CRM",
+      "platform": "Business Platform",
+      "year": "Delivered",
+      "link": "",
+      "desc": "A business messaging platform for campaigns, templates, and conversation follow-up, built to keep client communication in one place."
+    }
+  ],
+  "socials": [
+    { "label": "GitHub",    "href": "https://github.com/krishshah1108" },
+    { "label": "LinkedIn",  "href": "https://www.linkedin.com/in/krish-shah-tech1108/" },
+    { "label": "Instagram", "href": "https://www.instagram.com/krish._shah_/" }
+  ]
+}
