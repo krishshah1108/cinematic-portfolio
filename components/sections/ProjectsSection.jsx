@@ -28,7 +28,40 @@ export default function ProjectsSection() {
     contentRefs.current = contentRefs.current.slice(0, n)
     bgRefs.current      = bgRefs.current.slice(0, n)
 
-    // Slides 2+ hidden initially
+    const mq = window.matchMedia('(max-width: 767px)')
+    let cleanup = () => {}
+
+    function bindMobile() {
+      contentRefs.current.forEach((el) => {
+        if (el) gsap.set(el, { clearProps: 'opacity,transform,filter' })
+      })
+      gsap.set(track, { clearProps: 'x,xPercent,transform' })
+
+      const slides = [...track.children]
+
+      function onScroll() {
+        const mark = scroller.clientHeight * 0.45
+        let active = 0
+        slides.forEach((slide, i) => {
+          if (slide.getBoundingClientRect().top <= mark) active = i
+        })
+        setSlideIdx(prev => prev !== active ? active : prev)
+        if (progressRef.current) {
+          gsap.set(progressRef.current, {
+            scaleX: n === 1 ? 1 : active / (n - 1),
+            transformOrigin: 'left center',
+            overwrite: true,
+          })
+        }
+        if (counterRef.current) counterRef.current.textContent = `0${active + 1}`
+      }
+
+      scroller.addEventListener('scroll', onScroll, { passive: true })
+      onScroll()
+      return () => scroller.removeEventListener('scroll', onScroll)
+    }
+
+    function bindDesktop() {
     contentRefs.current.forEach((el, i) => {
       if (el && i > 0) gsap.set(el, { opacity: 0, y: 30 })
     })
@@ -105,12 +138,26 @@ export default function ProjectsSection() {
     })
 
     return () => st.kill()
+    }
+
+    function setup() {
+      cleanup()
+      cleanup = mq.matches ? bindMobile() : bindDesktop()
+    }
+
+    setup()
+    mq.addEventListener('change', setup)
+    return () => {
+      mq.removeEventListener('change', setup)
+      cleanup()
+    }
   }, [])
 
   return (
-    <div style={{ height: `${PROJECTS.length * 100}vh` }}>
+    <div className={styles.pin} style={{ height: `${PROJECTS.length * 100}vh` }}>
       <section ref={sectionRef} className={styles.section}>
 
+        <div className={styles.chrome}>
         {/* Top bar */}
         <div className={styles.topBar}>
           <span className={styles.sectionLabel}>Projects</span>
@@ -119,6 +166,13 @@ export default function ProjectsSection() {
             <span className={styles.cSep}> / </span>
             <span className={styles.cTot}>0{PROJECTS.length}</span>
           </div>
+        </div>
+        {/* Progress bar */}
+        <div className={styles.bottomUI}>
+          <div className={styles.progressTrack}>
+            <div ref={progressRef} className={styles.progressBar} />
+          </div>
+        </div>
         </div>
 
         {/* Horizontal track */}
@@ -187,13 +241,6 @@ export default function ProjectsSection() {
 
             </div>
           ))}
-        </div>
-
-        {/* Progress bar */}
-        <div className={styles.bottomUI}>
-          <div className={styles.progressTrack}>
-            <div ref={progressRef} className={styles.progressBar} />
-          </div>
         </div>
 
       </section>

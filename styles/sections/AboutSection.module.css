@@ -191,32 +191,47 @@
 }
 
 @media (max-width: 767px) {
-  .content {
-    justify-content: start;
-  }
-
   .section {
     grid-template-columns: 1fr;
-    grid-template-rows: 60svh 1fr;
+    grid-template-rows: minmax(0, 46svh) minmax(0, 1fr);
     height: 100svh;
-    min-height: -webkit-fill-available;
+    min-height: 100svh;
     overflow: hidden;
   }
   .photoCol {
-    padding: 3.5rem 1rem 0.5rem;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 0.75rem;
-    overflow: visible;
+    position: relative;
+    display: block;
+    padding: 4.25rem 0 0;
+    min-height: 0;
+    overflow: hidden;
   }
-  .photoWrap    { flex: 1; max-height: 100%; align-self: stretch; height: 100%; }
-  .socials      { flex-direction: column; margin-top: 0; gap: 0.4rem; }
+  .photoWrap {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+  }
+  .socials {
+    position: absolute;
+    right: 0.65rem;
+    bottom: 0.55rem;
+    flex-direction: column;
+    margin-top: 0;
+    gap: 0.4rem;
+    z-index: 5;
+  }
   .socialLink   { width: 2rem; height: 2rem; font-size: 1rem; }
-  .content      { padding: 1rem 1.25rem 0.75rem; overflow-y: auto; -webkit-overflow-scrolling: touch; }
-  .bio          { font-size: clamp(0.72rem, 3vw, 0.95rem); }
-  .marqueeWrap  { margin-bottom: 0.6rem; }
-  .whoLabel     { font-size: 0.8rem; margin-bottom: 0.3rem; }
-  .signature    { font-size: 3rem; bottom: -1rem; right: -0.5rem; }
+  .content {
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 0.85rem 1.15rem 1.15rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .bio          { font-size: clamp(1rem, 3.9vw, 1.15rem); line-height: 1.48; }
+  .marqueeWrap  { margin-bottom: 0.7rem; }
+  .whoLabel     { font-size: 0.78rem; margin-bottom: 0.35rem; }
+  .signature    { font-size: 2.6rem; bottom: 0.15rem; right: auto; left: 0.85rem; }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
